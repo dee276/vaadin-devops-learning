@@ -13,3 +13,11 @@ node_modules/
 src/main/frontend/generated/
 src/main/frontend/index.html
 vite.generated.ts
+
+# Terraform local files
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/terraform.tfvars
+terraform/crash.log
+terraform/tfplan
