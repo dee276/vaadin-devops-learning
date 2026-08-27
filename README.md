@@ -27,7 +27,7 @@ On Windows PowerShell:
 .\mvnw.cmd spring-boot:run
 ```
 
-The `spring-boot:run` Maven goal compiles the application and starts its embedded web server. Open http://localhost:8080 after startup.
+The `spring-boot:run` Maven goal compiles the application and starts its embedded web server. Open http://localhost:8081 after startup.
 
 Stop the server with `Ctrl+C` in the terminal.
 

@@ -1,0 +1,8 @@
+.git
+.gitignore
+.idea
+.vscode
+target
+node_modules
+src/main/frontend/generated
+README.md
