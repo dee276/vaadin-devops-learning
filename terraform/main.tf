@@ -1,9 +1,18 @@
+resource "google_compute_address" "app" {
+  name   = "vaadin-devops-ip"
+  region = var.region
+}
+
 resource "google_compute_instance" "app" {
   name         = "vaadin-devops-vm"
   machine_type = var.machine_type
   zone         = var.zone
 
   tags = ["vaadin-app"]
+
+  metadata = {
+    "ssh-keys" = "deployer:${var.ssh_public_key}"
+  }
 
   boot_disk {
     initialize_params {
@@ -16,7 +25,9 @@ resource "google_compute_instance" "app" {
   network_interface {
     network = "default"
 
-    access_config {}
+    access_config {
+      nat_ip = google_compute_address.app.address
+    }
   }
 
   metadata_startup_script = <<-EOT

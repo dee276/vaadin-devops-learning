@@ -31,3 +31,8 @@ variable "docker_image" {
   description = "Full Docker image name and tag"
   type        = string
 }
+
+variable "ssh_public_key" {
+  description = "Public SSH key authorized to deploy the application"
+  type        = string
+}
